@@ -20,69 +20,59 @@ header img {
 }
 
 header h1 {
-  font-size: 2em;
+  font-size: 3.2em;
   margin: 0;
 }
 
 header p {
-  font-size: 1.2em;
-  max-width: 600px;
+  font-size: 1.4em;
+  max-width: 800px;
   margin: 10px auto 0;
 }
 
 /* Center the instructions text under the header */
 .instructions {
   text-align: center;
-  font-size: 1em;
+  font-size: 1.3em;
   margin: 20px 0 0 0;
 }
 
 /* Make the timeline section scroll horizontally */
 section.timeline {
   display: flex;
-  overflow-x: auto;        /* enables horizontal scroll */
-  padding: 20px;
   gap: 20px;
+  overflow-x: auto;
   scroll-behavior: smooth;
-  /* Show only 3 cards at a time */
-  max-width: 980px;        /* 3 cards * 300px + 2*20px gap = 960px */
-  margin: 0 auto;          /* center the timeline */
-  /* Enable scroll snap for timeline cards */
+  max-width: 980px;
+  margin: 0 auto;
   scroll-snap-type: x mandatory;
+  padding: 20px;
 }
 
-/* Timeline card styles */
+/* Timeline Section & Cards */
 section.timeline div {
-  background-color: white;
-  flex: 0 0 300px;         /* fixed width for each card */
+  background: #fff;
+  flex: 0 0 300px;
   border-radius: 10px;
-  padding: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  padding: 15px;
   position: relative;
   overflow: hidden;
-  /* Snap each card to the scroll position */
+  transition: transform 0.3s;
   scroll-snap-align: start;
 }
-
-/* On hover: slightly zoom card */
 section.timeline div:hover {
   transform: scale(1.05);
 }
-
-/* Style for headings inside the cards */
 section.timeline h2 {
-  margin-top: 0;
+  margin: 0;
   font-size: 1.5em;
   color: #003c71;
 }
-
 section.timeline h3 {
   margin: 5px 0;
   font-size: 1.2em;
 }
-
-/* Card images */
 section.timeline img {
   width: 100%;
   height: 180px;
@@ -90,95 +80,100 @@ section.timeline img {
   object-fit: cover;
   margin: 10px 0;
 }
-section img {
-  width: 100%;
-  height: 180px;
-  border-radius: 5px;
-  object-fit: cover;
-  margin: 10px 0;
-}
 
-/* Paragraphs inside cards - hidden by default */
+/* Card Reveal on Hover */
 section.timeline p {
   font-size: 0.95em;
   line-height: 1.4;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
   max-height: 0;
-  overflow: hidden;
   opacity: 0;
-  /* Add absolute positioning for reveal effect */
+  transition: max-height 0.3s, opacity 0.3s;
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background-color: #003c71;
+  background: #003c71;
   color: #fff;
   padding: 20px;
-  box-sizing: border-box;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  pointer-events: none; /* Prevent accidental selection when hidden */
+  pointer-events: none;
 }
-
-/* Hide image and titles on card hover */
 section.timeline div:hover img,
 section.timeline div:hover h2,
 section.timeline div:hover h3 {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s;
 }
-
-/* Show paragraph text on hover, covering the full card */
 section.timeline div:hover p {
   max-height: 1000px;
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Timeline arrow indicators */
+/* Timeline Arrows */
 .timeline-arrows {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 980px;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 0;
   padding: 0 30px;
 }
-
 .arrow {
   font-size: 2em;
   color: #003c71;
   user-select: none;
-  pointer-events: none; /* purely visual */
+  pointer-events: none;
 }
 
-/* Hide arrows on small screens (vertical timeline) */
-@media (max-width: 600px) {
+/* 3-column section hover effect */
+.py-5.bg-light .col-md-4 > div {
+  transition: transform 0.3s;
+}
+.py-5.bg-light .col-md-4 > div:hover {
+  transform: scale(1.05);
+}
+
+/* 3-column section Intel Blue background */
+.py-5.bg-light {
+  background-color: #003c71 !important;
+}
+.py-5.bg-light .col-md-4 > div {
+  transition: transform 0.3s;
+  background: #fff; /* keep cards white for contrast */
+  color: #003c71;   /* Intel Blue text for headings */
+}
+.py-5.bg-light .col-md-4 > div h3,
+.py-5.bg-light .col-md-4 > div a {
+  color: #003c71;
+}
+.py-5.bg-light .col-md-4 > div p {
+  color: #333;
+}
+
+/* Responsive: Stack timeline vertically on small screens */
+@media (max-width: 650px) {
   .timeline-arrows {
     display: none;
   }
   section {
-    flex-direction: column;      /* Stack cards vertically */
-    overflow-x: unset;           /* Remove horizontal scroll */
-    overflow-y: auto;            /* Enable vertical scroll if needed */
-    max-height: 80vh;            /* Limit height so user can scroll */
+    flex-direction: column;
+    overflow-x: unset;
+    overflow-y: auto;
+    max-height: 80vh;
     gap: 20px;
-    max-width: 100%;             /* Remove width limit on small screens */
-    /* Remove scroll snap on vertical layout */
+    max-width: 100%;
     scroll-snap-type: none;
   }
   section div {
-    width: 100%;                 /* Cards take full width */
+    width: 100%;
     max-width: 100%;
-    /* Remove scroll snap on vertical layout */
     scroll-snap-align: unset;
   }
-
-  /* Reduce header image and text size*/
   header img {
     width: 180px;
     margin-bottom: 12px;
@@ -190,9 +185,8 @@ section.timeline div:hover p {
     font-size: 1em;
     max-width: 95vw;
   }
-
-  /* Make instructions smaller on small screens */
   .instructions {
     font-size: 0.7em;
   }
 }
+
