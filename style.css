@@ -190,3 +190,9 @@ section.timeline div:hover p {
   }
 }
 
+/*Hover effect on Footer */
+  footer a:hover {
+    color: #0d6efd !important;
+    text-decoration: underline;
+  }
+
