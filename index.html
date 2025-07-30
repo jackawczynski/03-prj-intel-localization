@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intel: Sustainability Through the Ages</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.rtl.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 
@@ -17,7 +20,7 @@
       <h1>
         SUSTAINABILITY THROUGH THE AGES
       </h1>
-
+      
       <!-- Subheading / Description -->
       <p>
         Explore Intel's journey through time, discovering how our commitment
@@ -36,7 +39,7 @@
   </div>
 
   <!-- Timeline Cards Section -->
-  <section>
+  <section class="timeline">
     <!-- Each card below represents a key year in Intel's sustainability journey -->
 
     <!-- Card 1: 1968 -->
@@ -152,54 +155,120 @@
     </div>
   </section>
   <!-- 3-Column Content Section -->
-  <section>
-    <div>
-      
+<section class="py-5 bg-light">
+  <div class="container-xl">
+    <div class="row text-center">
       <!-- Column 1 -->
-      <div>
-        <h2>RISE Strategy</h2>
-        <p>
-          Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
-          Intel sets ambitious 2030 goals, including driving industry-wide 
-          progress on climate action, water stewardship, and waste reduction.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-md-4 mb-4">
+        <div class="d-flex flex-column justify-content-between p-4 border rounded h-100" style="min-height: 340px;">
+          <h3 class="d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+            <i class="bi bi-bar-chart-line-fill mb-5"></i>
+            <span class="mb-5">RISE Strategy</span>
+          </h3>
+          <p class="text-center">
+            Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, 
+            Intel sets ambitious 2030 goals, including climate action and waste reduction.
+          </p>
+          <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+        </div>
       </div>
 
       <!-- Column 2 -->
-      <div>
-        <h2>Commitment</h2>
-        <p>
-          In 2022, Intel pledged to achieve net-zero greenhouse gas emissions 
-          (Scope 1 and 2) by 2040. This commitment builds on decades of 
-          environmental initiatives and partnerships across the semiconductor 
-          industry.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-md-4 mb-4">
+        <div class="d-flex flex-column justify-content-between p-4 border rounded h-100" style="min-height: 340px;">
+          <h3 class="d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+            <i class="bi bi-globe-americas mb-5"></i>
+            <span class="mb-5">Commitment</span>
+          </h3>
+          <p class="text-center">
+            In 2022, Intel pledged to achieve net-zero Scope 1 and 2 emissions by 2040, 
+            continuing its legacy of sustainability leadership.
+          </p>
+          <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+        </div>
       </div>
 
       <!-- Column 3 -->
-      <div>
-        <h2>Water &amp; Waste</h2>
-        <p>
-          Intel conserves billions of gallons of water annually and 
-          collaborates with local communities to restore watersheds.
-          Intel also upcycles and recycles materials to reduce waste and 
-          advance a circular economy.
-        </p>
-        <!-- Learn More Button -->
-        <a href="#">Learn More</a>
+      <div class="col-md-4 mb-4">
+        <div class="d-flex flex-column justify-content-between p-4 border rounded h-100" style="min-height: 340px;">
+          <h3 class="d-flex align-items-center justify-content-center gap-2 flex-row-reverse">
+            <i class="bi bi-droplet-fill mb-5"></i>
+            <span class="mb-5">Water &amp; Waste</span>
+          </h3>
+          <p class="text-center">
+            Intel conserves billions of gallons of water annually and leads in waste 
+            recycling, aiming to advance a circular economy.
+          </p>
+          <a href="#" class="btn btn-outline-primary mt-auto">Learn More</a>
+        </div>
       </div>
-
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Subscription Form -->
-  <section>
-    <h2>Subscribe to our Newsletter</h2>
-    <!-- Add form here -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4">Subscribe to our Sustainability Newsletter</h2>
+        <p class="mb-4">Stay informed about Intel’s latest sustainability milestones, innovations, and events.</p>
+        <form class="row g-3">
+          <div class="col-md-8">
+            <label for="newsletterEmail" class="visually-hidden">Email address</label>
+            <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email" required>
+          </div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+          </div>
+        </form>
+        <!-- Consent Checkbox -->
+        <div class="form-check mt-3 d-flex align-items-center justify-content-center">
+          <input class="form-check-input ms-2 mt-1" type="checkbox" id="consentCheckbox" required>
+          <label class="form-check-label small" for="consentCheckbox">
+            I agree to receive email communications from Intel about sustainability updates.
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer -->
+<footer class="bg-dark text-light py-4 mt-5">
+  <div class="container text-center">
+    <div class="mb-3">
+      <a href="#" class="text-light mx-2 text-decoration-none">Privacy Policy</a>
+      <a href="#" class="text-light mx-2 text-decoration-none">Terms of Use</a>
+      <a href="#" class="text-light mx-2 text-decoration-none">Contact</a>
+    </div>
+    <small>&copy; 2025 Intel Corporation. All rights reserved.</small>
+  </div>
+</footer>
   </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+  <script>
+    // List of RTL language codes
+    const rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    function getLangFromHtml() {
+      // Google Translate sets lang attribute on <html>
+      return document.documentElement.lang || 'en';
+    }
+    function setRTLMode(isRTL) {
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+      // Optionally, toggle a CSS class for further custom RTL tweaks
+      document.body.classList.toggle('rtl', isRTL);
+    }
+    function checkAndApplyRTL() {
+      const lang = getLangFromHtml().toLowerCase().slice(0,2);
+      setRTLMode(rtlLangs.includes(lang));
+    }
+    // Initial check
+    checkAndApplyRTL();
+    // Observe changes to <html> lang attribute (Google Translate updates this)
+    const htmlObserver = new MutationObserver(checkAndApplyRTL);
+    htmlObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+  </script>
 </body>
+</html>
 </html>
